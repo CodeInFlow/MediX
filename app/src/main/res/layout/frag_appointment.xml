@@ -221,10 +221,11 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
+                    android:id="@+id/set_appointment"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:text="@string/set_appointment"
-                    android:layout_margin="50dp" />
+                    android:layout_margin="50dp"
+                    android:text="@string/set_appointment" />
 
             </LinearLayout>
 
