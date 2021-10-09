@@ -48,7 +48,7 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
-        android:textColor="@color/theme_color"/>
+        android:textColor="@color/themeColor"/>
 
     <TextView
         android:id="@+id/txt_log1"
@@ -73,7 +73,7 @@
         android:textSize="18sp"
         android:background="@drawable/rounded_et"
         android:textColor="@color/white"
-        android:backgroundTint="@color/theme_color"/>
+        android:backgroundTint="@color/themeColor"/>
 
 
 </RelativeLayout>
