@@ -20,6 +20,7 @@
         android:background="@drawable/rounded_et"
         android:layout_below="@+id/img_login_bg"
         android:paddingLeft="20dp"
+        android:hint="Name"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
@@ -36,6 +37,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
+        android:hint="Phone no"
         android:drawableStart="@drawable/ic_phone"
         />
 

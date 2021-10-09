@@ -63,9 +63,9 @@ ImageView i_Surgeon,i_Psychiatrist,i_Neurologist,i_Dentist,i_General,i_Cardiolog
         i_Dentist.setImageResource(R.drawable.dentist);
 
         v.findViewById(R.id.card_Cardiologist).setOnClickListener(this);
-        t_Cardiologist = v.findViewById(R.id.card_General).findViewById(R.id.cate_name);
+        t_Cardiologist = v.findViewById(R.id.card_Cardiologist).findViewById(R.id.cate_name);
         t_Cardiologist.setText("Cardiologist");
-        i_Cardiologist =v.findViewById(R.id.card_General).findViewById(R.id.cate_img);
+        i_Cardiologist =v.findViewById(R.id.card_Cardiologist).findViewById(R.id.cate_img);
         i_Cardiologist.setImageResource(R.drawable.cardiologist);
 
         return v;
