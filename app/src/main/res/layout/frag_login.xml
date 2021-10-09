@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <ImageView
+        android:id="@+id/img_login_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <EditText
+        android:id="@+id/et_Name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_et"
+        android:layout_below="@+id/img_login_bg"
+        android:paddingLeft="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:drawableStart="@drawable/ic_person"
+        />
+
+    <EditText
+        android:id="@+id/et_phnNos"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_et"
+        android:layout_below="@+id/et_Name"
+        android:paddingLeft="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_phone"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms and Conditions"
+        android:layout_below="@+id/et_phnNos"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/themeColor"/>
+
+    <TextView
+        android:id="@+id/txt_log1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please login to continue using our app"
+        android:layout_below="@id/checkBox"
+        android:layout_centerHorizontal="true"
+        android:textSize="16dp"
+
+        android:layout_marginTop="20dp"/>
+
+
+    <Button
+        android:id="@+id/btn_getOtp"
+        android:layout_width="160dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="60dp"
+        android:text="Get Otp"
+        android:layout_below="@+id/txt_log1"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_et"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/themeColor"/>
+
+
+</RelativeLayout>
