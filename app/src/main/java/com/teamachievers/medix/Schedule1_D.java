@@ -18,50 +18,54 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.teamachievers.medix.Adapter.clinicsAdapter;
-import com.teamachievers.medix.Adapter.scheduleAdapter;
-import com.teamachievers.medix.Model.clinicsModel;
+import com.teamachievers.medix.Adapter.doctorsAdapter;
+import com.teamachievers.medix.Model.doctorsModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Schedule extends Fragment {
+public class Schedule1_D extends Fragment {
 
 
-    private RecyclerView scheduleRV;
-    private ArrayList<clinicsModel> scheduleArrayList;
-    private scheduleAdapter scheduleRVAdapter;
+    private RecyclerView scheduleDRV;
+    private ArrayList<doctorsModel> scheduleDArrayList;
+    private doctorsAdapter scheduleDRVAdapter;
     private FirebaseFirestore db;
+    String cid = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.frag_schedule, container, false);
 
-        scheduleRV = v.findViewById(R.id.rv_schedule);
+        View v = inflater.inflate(R.layout.frag_schedule1__d, container, false);
+
+        cid=getArguments().getString("cid");
+
+
+        scheduleDRV = v.findViewById(R.id.rv_schedule1_D);
         db = FirebaseFirestore.getInstance();
 
-        scheduleArrayList = new ArrayList<>();
-        scheduleRV.setHasFixedSize(true);
-        scheduleRV.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        scheduleDArrayList = new ArrayList<>();
+        scheduleDRV.setHasFixedSize(true);
+        scheduleDRV.setLayoutManager(new GridLayoutManager(getActivity(),2));
 
-        scheduleRVAdapter = new scheduleAdapter(scheduleArrayList, getActivity());
+        scheduleDRVAdapter = new doctorsAdapter(scheduleDArrayList, getActivity());
 
-        scheduleRV.setAdapter(scheduleRVAdapter);
+        scheduleDRV.setAdapter(scheduleDRVAdapter);
 
-        db.collection("/Appointments/7999969395/Clinics").get()
+        db.collection("/Appointments/7999969395/Clinics/"+cid+"/Doctors").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         if (!queryDocumentSnapshots.isEmpty()) {
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                             for (DocumentSnapshot d : list) {
-                                clinicsModel c = d.toObject(clinicsModel.class);
+                                doctorsModel c = d.toObject(doctorsModel.class);
 
-                                scheduleArrayList.add(c);
+                                scheduleDArrayList.add(c);
                             }
-                            scheduleRVAdapter.notifyDataSetChanged();
+                            scheduleDRVAdapter.notifyDataSetChanged();
                         } else {
 
                         }
@@ -73,6 +77,8 @@ public class Schedule extends Fragment {
             }
         });
 
+
         return v;
     }
+
 }
