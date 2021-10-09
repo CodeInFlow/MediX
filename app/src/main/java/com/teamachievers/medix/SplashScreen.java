@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 public class SplashScreen extends Fragment {
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -21,5 +20,4 @@ public class SplashScreen extends Fragment {
         View v = inflater.inflate(R.layout.frag_splashscreen, container, false);
         return v;
     }
-
 }
