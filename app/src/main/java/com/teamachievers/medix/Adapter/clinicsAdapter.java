@@ -57,6 +57,7 @@ public class clinicsAdapter extends RecyclerView.Adapter<clinicsAdapter.ViewHold
                 FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 bundle.putString("cid", "1");
+                fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.frameContainer2, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();

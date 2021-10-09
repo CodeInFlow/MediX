@@ -45,7 +45,6 @@ public class Doctors extends Fragment {
 
 
             cid=getArguments().getString("cid");
-            Log.i("Working", cid);
 
 
             doctorsRV = v.findViewById(R.id.rv_doctors);
