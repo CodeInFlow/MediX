@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         RelativeLayout splash_screen = findViewById(R.id.splashscreen);
 
-
         new Handler().postDelayed(new Runnable() {
 
             @Override
