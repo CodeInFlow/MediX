@@ -19,17 +19,18 @@
             android:layout_marginTop="30dp"
             app:cardCornerRadius="70dp">
 
-            <ImageView
-                android:id="@+id/img_doctor"
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/doctor_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="12dp" />
+                app:riv_corner_radius="30dp"
+                android:src="@drawable/intro1_bg"/>
 
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/dr_name"
+            android:id="@+id/doctor_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -40,7 +41,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/dr_prof"
+            android:id="@+id/doctor_prof"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12sp"
