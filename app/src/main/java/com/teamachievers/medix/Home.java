@@ -38,31 +38,31 @@ ImageView i_Surgeon,i_Psychiatrist,i_Neurologist,i_Dentist,i_General,i_Cardiolog
         i_General =v.findViewById(R.id.card_General).findViewById(R.id.cate_img);
         i_General.setImageResource(R.drawable.general);
 
-        v.findViewById(R.id.card_General).setOnClickListener(this);
+        v.findViewById(R.id.card_Surgeon).setOnClickListener(this);
         t_Surgeon = v.findViewById(R.id.card_Surgeon).findViewById(R.id.cate_name);
         t_Surgeon.setText("Surgeon");
         i_Surgeon =v.findViewById(R.id.card_Surgeon).findViewById(R.id.cate_img);
         i_Surgeon.setImageResource(R.drawable.surgeon);
 
-        v.findViewById(R.id.card_General).setOnClickListener(this);
+        v.findViewById(R.id.card_Neurologist).setOnClickListener(this);
         t_Neurologist = v.findViewById(R.id.card_Neurologist).findViewById(R.id.cate_name);
         t_Neurologist.setText("Neurologist");
         i_Neurologist =v.findViewById(R.id.card_Neurologist).findViewById(R.id.cate_img);
         i_Neurologist.setImageResource(R.drawable.neurologist);
 
-        v.findViewById(R.id.card_General).setOnClickListener(this);
+        v.findViewById(R.id.card_Psychiatrist).setOnClickListener(this);
         t_Psychiatrist = v.findViewById(R.id.card_Psychiatrist).findViewById(R.id.cate_name);
         t_Psychiatrist.setText("Psychiatrist");
         i_Psychiatrist =v.findViewById(R.id.card_Psychiatrist).findViewById(R.id.cate_img);
         i_Psychiatrist.setImageResource(R.drawable.psychiatrist);
 
-        v.findViewById(R.id.card_General).setOnClickListener(this);
+        v.findViewById(R.id.card_Dentist).setOnClickListener(this);
         t_Dentist = v.findViewById(R.id.card_Dentist).findViewById(R.id.cate_name);
         t_Dentist.setText("Dentist");
         i_Dentist =v.findViewById(R.id.card_Dentist).findViewById(R.id.cate_img);
         i_Dentist.setImageResource(R.drawable.dentist);
 
-        v.findViewById(R.id.card_General).setOnClickListener(this);
+        v.findViewById(R.id.card_Cardiologist).setOnClickListener(this);
         t_Cardiologist = v.findViewById(R.id.card_General).findViewById(R.id.cate_name);
         t_Cardiologist.setText("Cardiologist");
         i_Cardiologist =v.findViewById(R.id.card_General).findViewById(R.id.cate_img);
@@ -77,12 +77,10 @@ ImageView i_Surgeon,i_Psychiatrist,i_Neurologist,i_Dentist,i_General,i_Cardiolog
         Fragment fragment = new Clinics();
         switch (v.getId()){
             case R.id.card_General:
-                bundle.putString("cate", "General");
-                bundle.putString("cate_link", "Gen");
+                bundle.putString("clinic_type", "CT1");
                 break;
             case R.id.card_Dentist:
-                bundle.putString("cate", "Dentist");
-                bundle.putString("cate_link", "Den");
+                bundle.putString("clinic_type", "CT2");
                 break;
         }
         fragment.setArguments(bundle);

@@ -22,19 +22,18 @@ public class MainActivity2 extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            return false;
             Fragment fragment;
             fragment = new Home();
             switch (item.getItemId()) {
                 case R.id.navigation_calender:
-                    fragment = new schedule();
+                    fragment = new Schedule();
                     break;
                 case R.id.navigation_home:
                     fragment = new Home();
                     break;
 
                 case R.id.navigation_profile:
-                    fragment = new Profile();
+                    fragment = new Appointment();
                     break;
             }
 
