@@ -115,7 +115,7 @@
             android:layout_weight="33.33">
 
             <include
-                android:id="@+id/card_Dentist"
+                android:id="@+id/card_Cardiologist"
                 layout="@layout/card_categories" />
 
         </RelativeLayout>
@@ -126,7 +126,7 @@
             android:layout_weight="33.33">
 
             <include
-                android:id="@+id/card_Dentistry"
+                android:id="@+id/card_Dentist"
                 layout="@layout/card_categories" />
 
         </RelativeLayout>
