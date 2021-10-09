@@ -24,8 +24,8 @@ public class dr_detail extends Fragment {
 
     private FirebaseFirestore db;
     ImageView img_dr;
-    TextView drName;
-    String a,b,refno;
+    TextView drName ,drProf,drDetail,drTime,nos_pt,nos_Exp;
+    String a,b,c,d,e,f,g,refno;
 
 
 
@@ -38,6 +38,11 @@ public class dr_detail extends Fragment {
 
         img_dr =v.findViewById(R.id.img_dr);
         drName =v.findViewById(R.id.drName);
+        drProf=v.findViewById(R.id.txt_prf);
+        drDetail=v.findViewById(R.id.txt_dr_detail);
+        drTime=v.findViewById(R.id.txt_time);
+        nos_pt=v.findViewById(R.id.nos_Patients);
+        nos_Exp=v.findViewById(R.id.Exp);
 
         db = FirebaseFirestore.getInstance();
         getdata();
@@ -46,7 +51,7 @@ public class dr_detail extends Fragment {
     }
 
     private void getdata() {
-        DocumentReference docRef = db.collection("DetailedArticle").document(refno);
+        DocumentReference docRef = db.collection("DetailedDoctor").document(refno);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -55,7 +60,19 @@ public class dr_detail extends Fragment {
                     if (document != null) {
                         a =document.getString("drImg");
                         b = document.getString("drName");
+                        c = document.getString("drprof");
+                        d = document.getString("detail");
+                        e = document.getString("time");
+                        f = document.getString("nos_p");
+                        g = document.getString("exp");
+
+
+                        drProf.setText(c);
+                        drDetail.setText(d);
                         drName.setText(b);
+                        drTime.setText(e);
+                        nos_pt.setText(f);
+                        nos_Exp.setText(g);
 
                         Picasso.get().load(a).into(img_dr);
 
