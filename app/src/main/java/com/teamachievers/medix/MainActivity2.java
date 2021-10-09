@@ -33,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_profile:
-                    fragment = new Appointment();
+                    fragment = new Profile();
                     break;
             }
 
