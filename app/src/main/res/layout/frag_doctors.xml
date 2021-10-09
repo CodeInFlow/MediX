@@ -5,24 +5,23 @@
     android:layout_height="match_parent"
     android:overScrollMode="never"
     android:orientation="vertical"
-    tools:context=".Clinics">
+    tools:context=".Doctors">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
-    <ImageView
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:src="@drawable/ic_back"
-        />
-
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_back"
+            />
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_clinics"
+        android:id="@+id/rv_doctors"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"

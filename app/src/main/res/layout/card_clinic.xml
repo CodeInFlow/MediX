@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:id="@+id/card_clinic_item"
     android:layout_width="170dp"
     android:layout_height="198.33dp"
     android:layout_margin="10dp"
     app:cardCornerRadius="6dp">
 
-
-    <ImageView
-        android:id="@+id/clinic_image"
-        android:layout_width="136dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="22dp"
-        android:layout_gravity="center_horizontal"
-        android:scaleType="fitXY" />
-
-    <TextView
-        android:id="@+id/clinic_name"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        />
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/clinic_image"
+            android:layout_width="136dp"
+            android:layout_height="107dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/clinic_name"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clinic_image"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textAlignment="center" />
+
+    </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

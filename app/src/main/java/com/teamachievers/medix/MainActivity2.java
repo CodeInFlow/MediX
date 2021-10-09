@@ -15,10 +15,10 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Fragment fragment;
-        fragment = new dr_detail();
+        fragment = new Clinics();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameContainer, fragment);
+        fragmentTransaction.replace(R.id.frameContainer2, fragment);
         fragmentTransaction.commit();
     }
 }
