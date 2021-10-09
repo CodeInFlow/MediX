@@ -10,18 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class schedule1_D extends Fragment {
+public class MyAppointment extends Fragment {
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View v = inflater.inflate(R.layout.frag_schedule1__d, container, false);
-
+        View v = inflater.inflate(R.layout.frag_my_appointment, container, false);
         return v;
     }
 

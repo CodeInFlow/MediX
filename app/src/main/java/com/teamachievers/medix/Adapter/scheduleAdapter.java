@@ -20,7 +20,7 @@ import com.squareup.picasso.Picasso;
 import com.teamachievers.medix.Doctors;
 import com.teamachievers.medix.Model.clinicsModel;
 import com.teamachievers.medix.R;
-import com.teamachievers.medix.schedule1_D;
+import com.teamachievers.medix.Schedule1_D;
 
 import java.util.ArrayList;
 
@@ -49,7 +49,7 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
         holder.clinicImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment = new schedule1_D();
+                Fragment fragment = new Schedule1_D();
                 Bundle bundle = new Bundle();
                 FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
