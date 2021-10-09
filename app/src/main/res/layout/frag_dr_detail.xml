@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+    tools:context=".dr_detail">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/vv"
+            android:background="#FCFAFA"
+            android:layout_width="match_parent"
+            android:layout_height="430dp"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_btnBack"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="18dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_btn_back"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_dr"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="70dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="18dp">
+
+                <ImageView
+                    android:id="@+id/img_dr"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_phone"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/drName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prof. Dr. Suresh H. Advani"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="18dp"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/card_dr"/>
+
+            <TextView
+                android:id="@+id/txt_prf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senior Consultant"
+                android:layout_below="@id/drName"
+                android:layout_centerHorizontal="true"
+                android:padding="6dp"/>
+
+            <LinearLayout
+                android:layout_below="@+id/txt_prf"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:padding="4dp"
+                android:weightSum="100"
+                android:layout_height="150dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="13.33"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/img_1"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_dr_bg1"/>
+
+                        <TextView
+                            android:id="@+id/nos_Patients"
+                            android:layout_below="@id/img_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="1000+"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_below="@id/nos_Patients"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Patients"
+                            android:textSize="17sp"
+
+                            />
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="13.33"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    app:cardCornerRadius="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/img_2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_dr_bg2"/>
+
+                        <TextView
+                            android:id="@+id/Exp"
+                            android:layout_below="@id/img_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="43yr"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_below="@id/Exp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Experience"
+                            android:textSize="18sp"
+
+                            />
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="13.33"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtDR"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/vv"
+            android:layout_weight="4"
+            android:textSize="16sp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="About Doctor"/>
+
+        <TextView
+            android:id="@+id/txt_dr_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDR"
+            android:text="Dr. Suresh H. Advani is a medical, pediatric oncologist and heamato-oncologist with 43+ years of experience.
+He has been honored with highest civilian awards of India, namely Padma Bhushan Award in 2012 and Padma Shri by Government of India in 2002.
+He is also recipient of the Dhanvantari Award in 2002, Dr. B. C. Roy National Award by Medical Council of India in 2005, Rashtriyra Krantiveer Award, Ujjain in 2014 and awarded Lifetime Achievement in Oncology by Harvard Medical International in 2005."
+            android:layout_marginTop="20dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:textColor="#36455A" />
+
+        <TextView
+            android:id="@+id/txt_work_hr"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/txt_dr_detail"
+            android:layout_marginTop="20dp"
+            android:layout_weight="4"
+            android:textSize="16sp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Working time"/>
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_work_hr"
+            android:text="Mon - Sat (08:30 AM - 09:00 PM)"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:textColor="#36455A" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="10dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_et"
+            android:backgroundTint="@color/themeColor"
+            android:textColor="@color/white"
+            android:text="Book Appointment"
+            android:layout_height="60dp"
+            android:layout_below="@id/txt_time"/>
+
+
+
+
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
