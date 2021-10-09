@@ -13,15 +13,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:orientation="vertical"
-        android:paddingTop="35dp"
+        android:paddingTop="25dp"
         android:weightSum="100">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
             android:layout_weight="14">
 
             <TextView
@@ -35,6 +34,15 @@
                 android:text="MediX"
                 android:textColor="@color/themeColor"
                 android:textSize="29sp" />
+
+            <ImageView
+                android:id="@+id/img_Appoint"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_cal"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"/>
 
         </RelativeLayout>
 
@@ -104,7 +112,7 @@
             android:layout_weight="33.33">
 
             <include
-                android:id="@+id/card_CS"
+                android:id="@+id/card_General"
                 layout="@layout/card_categories" />
 
         </RelativeLayout>
@@ -115,7 +123,7 @@
             android:layout_weight="33.33">
 
             <include
-                android:id="@+id/card_CS"
+                android:id="@+id/card_Cardiologist"
                 layout="@layout/card_categories" />
 
         </RelativeLayout>
@@ -126,42 +134,60 @@
             android:layout_weight="33.33">
 
             <include
-                android:id="@+id/card_CS"
+                android:id="@+id/card_Dentist"
                 layout="@layout/card_categories" />
 
         </RelativeLayout>
     </LinearLayout>
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="6dp"
-                android:fontFamily="@font/neuton_bold"
-                android:padding="4dp"
-                android:text="Top Doctors near you"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="33.33">
 
-            <TextView
-                android:id="@+id/dr_viewall"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="6dp"
-                android:layout_marginRight="18dp"
-                android:fontFamily="@font/neuton_bold"
-                android:padding="4dp"
-                android:text="View All"
-                android:textColor="	#EC2028"
-                android:textSize="12sp" />
+                <include
+                    android:id="@+id/card_Neurologist"
+                    layout="@layout/card_categories" />
 
-        </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="33.33">
+
+                <include
+                    android:id="@+id/card_Psychiatrist"
+                    layout="@layout/card_categories" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="33.33">
+
+                <include
+                    android:id="@+id/card_Surgeon"
+                    layout="@layout/card_categories" />
+
+            </RelativeLayout>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="90dp"
+            android:src="@drawable/home_bg"/>
+
     </LinearLayout>
 
 

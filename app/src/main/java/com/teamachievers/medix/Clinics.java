@@ -39,7 +39,7 @@ public class Clinics extends Fragment {
 
         View v = inflater.inflate(R.layout.frag_clinics, container, false);
 
-//        String dept_link = getArguments().getString("clinic_type");
+        String CType = getArguments().getString("clinic_type");
 
 
         clinicsRV = v.findViewById(R.id.rv_clinics);
@@ -54,7 +54,7 @@ public class Clinics extends Fragment {
 
         clinicsRV.setAdapter(clinicsRVAdapter);
 
-        db.collection("CT1").get()
+        db.collection(CType).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {

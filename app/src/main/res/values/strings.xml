@@ -13,4 +13,8 @@
     <string name="ongoing_number">Ongoing Number :</string>
     <string name="your_appointment_number">Your Appointment Number :</string>
 
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_calender">Appointment</string>
+
 </resources>

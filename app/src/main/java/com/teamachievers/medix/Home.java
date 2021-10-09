@@ -3,62 +3,93 @@ package com.teamachievers.medix;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Home#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Home extends Fragment {
+import com.google.firebase.firestore.FirebaseFirestore;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import java.util.Locale;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public Home() {
-        // Required empty public constructor
-    }
+public class Home extends Fragment implements View.OnClickListener {
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Home.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Home newInstance(String param1, String param2) {
-        Home fragment = new Home();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+TextView t_Surgeon,t_Psychiatrist,t_Neurologist,t_Dentist,t_General,t_Cardiologist;
+ImageView i_Surgeon,i_Psychiatrist,i_Neurologist,i_Dentist,i_General,i_Cardiologist;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    Bundle bundle = new Bundle();
+
+    private FirebaseFirestore db;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag_home, container, false);
+        View v = inflater.inflate(R.layout.frag_home, container, false);
+
+        v.findViewById(R.id.card_General).setOnClickListener(this);
+        t_General = v.findViewById(R.id.card_General).findViewById(R.id.cate_name);
+        t_General.setText("General");
+        i_General =v.findViewById(R.id.card_General).findViewById(R.id.cate_img);
+        i_General.setImageResource(R.drawable.general);
+
+        v.findViewById(R.id.card_Surgeon).setOnClickListener(this);
+        t_Surgeon = v.findViewById(R.id.card_Surgeon).findViewById(R.id.cate_name);
+        t_Surgeon.setText("Surgeon");
+        i_Surgeon =v.findViewById(R.id.card_Surgeon).findViewById(R.id.cate_img);
+        i_Surgeon.setImageResource(R.drawable.surgeon);
+
+        v.findViewById(R.id.card_Neurologist).setOnClickListener(this);
+        t_Neurologist = v.findViewById(R.id.card_Neurologist).findViewById(R.id.cate_name);
+        t_Neurologist.setText("Neurologist");
+        i_Neurologist =v.findViewById(R.id.card_Neurologist).findViewById(R.id.cate_img);
+        i_Neurologist.setImageResource(R.drawable.neurologist);
+
+        v.findViewById(R.id.card_Psychiatrist).setOnClickListener(this);
+        t_Psychiatrist = v.findViewById(R.id.card_Psychiatrist).findViewById(R.id.cate_name);
+        t_Psychiatrist.setText("Psychiatrist");
+        i_Psychiatrist =v.findViewById(R.id.card_Psychiatrist).findViewById(R.id.cate_img);
+        i_Psychiatrist.setImageResource(R.drawable.psychiatrist);
+
+        v.findViewById(R.id.card_Dentist).setOnClickListener(this);
+        t_Dentist = v.findViewById(R.id.card_Dentist).findViewById(R.id.cate_name);
+        t_Dentist.setText("Dentist");
+        i_Dentist =v.findViewById(R.id.card_Dentist).findViewById(R.id.cate_img);
+        i_Dentist.setImageResource(R.drawable.dentist);
+
+        v.findViewById(R.id.card_Cardiologist).setOnClickListener(this);
+        t_Cardiologist = v.findViewById(R.id.card_General).findViewById(R.id.cate_name);
+        t_Cardiologist.setText("Cardiologist");
+        i_Cardiologist =v.findViewById(R.id.card_General).findViewById(R.id.cate_img);
+        i_Cardiologist.setImageResource(R.drawable.cardiologist);
+
+        return v;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        Fragment fragment = new Clinics();
+        switch (v.getId()){
+            case R.id.card_General:
+                bundle.putString("clinic_type", "CT1");
+                break;
+            case R.id.card_Dentist:
+                bundle.putString("clinic_type", "CT2");
+                break;
+        }
+        fragment.setArguments(bundle);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameContainer2, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+
     }
 }

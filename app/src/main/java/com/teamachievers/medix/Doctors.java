@@ -36,7 +36,7 @@ public class Doctors extends Fragment {
     private ArrayList<doctorsModel> doctorsArrayList;
     private doctorsAdapter doctorsRVAdapter;
     private FirebaseFirestore db;
-    String cid = "0";
+    String cid = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

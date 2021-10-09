@@ -11,7 +11,7 @@
     app:cardMaxElevation="10dp">
 
     <ImageView
-        android:id="@+id/dept_img"
+        android:id="@+id/cate_img"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginLeft="10dp"
@@ -19,7 +19,7 @@
         android:layout_marginRight="10dp" />
 
     <TextView
-        android:id="@+id/dept_name"
+        android:id="@+id/cate_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

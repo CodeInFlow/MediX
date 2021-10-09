@@ -63,7 +63,7 @@ public class Appointment extends Fragment {
         String date = dateFormat.format(calendar.getTime());
 
         tv.setText(month);
-        b1.setText(Integer.valueOf(date)+1);
+        //b1.setText(Integer.valueOf(date)+1);
 
         setAppointment = v.findViewById(R.id.set_appointment);
         setAppointment.setOnClickListener(new View.OnClickListener() {
