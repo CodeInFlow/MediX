@@ -19,6 +19,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.teamachievers.medix.Adapter.doctorsAdapter;
+import com.teamachievers.medix.Adapter.scheduleDAdapter;
 import com.teamachievers.medix.Model.doctorsModel;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class Schedule1_D extends Fragment {
 
     private RecyclerView scheduleDRV;
     private ArrayList<doctorsModel> scheduleDArrayList;
-    private doctorsAdapter scheduleDRVAdapter;
+    private scheduleDAdapter scheduleDRVAdapter;
     private FirebaseFirestore db;
     String cid = "";
 
@@ -50,7 +51,7 @@ public class Schedule1_D extends Fragment {
         scheduleDRV.setHasFixedSize(true);
         scheduleDRV.setLayoutManager(new GridLayoutManager(getActivity(),2));
 
-        scheduleDRVAdapter = new doctorsAdapter(scheduleDArrayList, getActivity());
+        scheduleDRVAdapter = new scheduleDAdapter(scheduleDArrayList, getActivity());
 
         scheduleDRV.setAdapter(scheduleDRVAdapter);
 

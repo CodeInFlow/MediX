@@ -64,8 +64,9 @@ public class dr_detail extends Fragment {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 bundle.putString("cid", cid);
-                bundle.putString("cid", did);
+                bundle.putString("did", did);
                 bundle.putString("drname",drName.toString());
+                bundle.putString("drimg",a);
                 fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.frameContainer2, fragment);
                 fragmentTransaction.addToBackStack(null);

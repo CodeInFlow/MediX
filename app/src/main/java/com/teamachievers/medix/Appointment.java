@@ -42,7 +42,7 @@ public class Appointment extends Fragment {
     EditText name,phone,age,desc;
     private FirebaseFirestore db;
     Map<String, Object> data = new HashMap<>();
-    String cid,did,drname;
+    String cid,did,drname,drimg;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,12 +53,13 @@ public class Appointment extends Fragment {
         cid=getArguments().getString("cid");
         did=getArguments().getString("did");
         drname=getArguments().getString("drname");
+        drimg=getArguments().getString("drimg");
 
         tv = v.findViewById(R.id.tv1);
         b1 = v.findViewById(R.id.date1);
-        b2 = v.findViewById(R.id.date1);
-        b3 = v.findViewById(R.id.date1);
-        b4 = v.findViewById(R.id.date1);
+        b2 = v.findViewById(R.id.date2);
+        b3 = v.findViewById(R.id.date3);
+        b4 = v.findViewById(R.id.date4);
 
         name = v.findViewById(R.id.fullname);
         phone = v.findViewById(R.id.phoneno);
@@ -92,9 +93,11 @@ public class Appointment extends Fragment {
                     age.setError("Enter a proper age");
                     age.requestFocus();
                 } else {
-                    data.put("name", name.getText().toString());
+                    data.put("fullname", name.getText().toString());
                     data.put("number", phone.getText().toString());
                     data.put("age", age.getText().toString());
+                    data.put("name", drname);
+                    data.put("img", drimg);
                     addDataToFirestore();
                 }
             }
@@ -112,14 +115,14 @@ public class Appointment extends Fragment {
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         //DocumentReference dbCourses = db.collection("").document();
-        CollectionReference collectionReference = db.collection("/Appointments/7999969395/Clinics/"+cid+"/Doctors/"+did+"/appointment/");
+        DocumentReference documentReference = db.collection("Appointments").document("/7999969395/Clinics/"+cid+"/Doctors/"+did);
 
-        collectionReference.add(data)
-                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        documentReference.set(data)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onComplete(@NonNull Task<DocumentReference> task) {
+                    public void onSuccess(Void aVoid) {
 
-                        Toast.makeText(getActivity(),"Submited",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Submitted", Toast.LENGTH_SHORT).show();
 
                     }
                 })
@@ -129,7 +132,6 @@ public class Appointment extends Fragment {
 
                     }
                 });
-
     }
 
 
