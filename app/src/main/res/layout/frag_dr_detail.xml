@@ -251,12 +251,9 @@ He is also recipient of the Dhanvantari Award in 2002, Dr. B. C. Roy National Aw
             android:backgroundTint="@color/themeColor"
             android:textColor="@color/white"
             android:text="Book Appointment"
+            android:layout_marginBottom="10dp"
             android:layout_height="60dp"
             android:layout_below="@id/txt_time"/>
-
-
-
-
 
 
     </RelativeLayout>
