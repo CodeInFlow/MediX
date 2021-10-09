@@ -194,7 +194,7 @@ public class Login extends Fragment {
 
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference dbCourses = db.collection("Appointments").document(mobile.getText().toString());
+        DocumentReference dbCourses = db.collection("User").document(currentuser);
 
         dbCourses.set(data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
