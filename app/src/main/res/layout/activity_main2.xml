@@ -20,8 +20,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:background="#FFFFFF"
-        app:itemIconTint="@color/bottom_nav_color"
-        app:itemTextColor="@color/bottom_nav_color"
-        app:menu="@menu/bottom_nav_menu" />
+        app:itemIconTint="@color/themeColor"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
