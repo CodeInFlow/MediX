@@ -42,6 +42,7 @@ public class Appointment extends Fragment {
     EditText name,phone,age,desc;
     private FirebaseFirestore db;
     Map<String, Object> data = new HashMap<>();
+    String cid,did,drname;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,8 +50,15 @@ public class Appointment extends Fragment {
         View v = inflater.inflate(R.layout.frag_appointment, container, false);
 
 
+        cid=getArguments().getString("cid");
+        did=getArguments().getString("did");
+        drname=getArguments().getString("drname");
+
         tv = v.findViewById(R.id.tv1);
         b1 = v.findViewById(R.id.date1);
+        b2 = v.findViewById(R.id.date1);
+        b3 = v.findViewById(R.id.date1);
+        b4 = v.findViewById(R.id.date1);
 
         name = v.findViewById(R.id.fullname);
         phone = v.findViewById(R.id.phoneno);
@@ -63,7 +71,10 @@ public class Appointment extends Fragment {
         String date = dateFormat.format(calendar.getTime());
 
         tv.setText(month);
-        //b1.setText(Integer.valueOf(date)+1);
+        b1.setText("11");
+        b2.setText("12");
+        b3.setText("13");
+        b4.setText("14");
 
         setAppointment = v.findViewById(R.id.set_appointment);
         setAppointment.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +89,7 @@ public class Appointment extends Fragment {
                     name.requestFocus();
                 }
                 if (age.getText().toString().isEmpty()) {
-                    age.setError("Enter a valid Email Address");
+                    age.setError("Enter a proper age");
                     age.requestFocus();
                 } else {
                     data.put("name", name.getText().toString());
@@ -101,7 +112,7 @@ public class Appointment extends Fragment {
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         //DocumentReference dbCourses = db.collection("").document();
-        CollectionReference collectionReference = db.collection("/Appointments/7999969395/100001/");
+        CollectionReference collectionReference = db.collection("/Appointments/7999969395/Clinics/"+cid+"/Doctors");
 
         collectionReference.add(data)
                 .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {

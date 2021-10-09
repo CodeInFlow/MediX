@@ -2,6 +2,7 @@ package com.teamachievers.medix.Adapter;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,42 +19,40 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.teamachievers.medix.Doctors;
 import com.teamachievers.medix.Model.clinicsModel;
-import com.teamachievers.medix.Model.doctorsModel;
 import com.teamachievers.medix.R;
-import com.teamachievers.medix.dr_detail;
+import com.teamachievers.medix.schedule1_D;
 
 import java.util.ArrayList;
 
-public class doctorsAdapter extends RecyclerView.Adapter<doctorsAdapter.ViewHolder> {
+public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHolder> {
 
-    private ArrayList<doctorsModel> doctorsArrayList;
+    private ArrayList<clinicsModel> scheduleArrayList;
     private Context context;
 
-    public doctorsAdapter(ArrayList<doctorsModel> doctorsArrayList, Context context) {
-        this.doctorsArrayList = doctorsArrayList;
+    public scheduleAdapter(ArrayList<clinicsModel> scheduleArrayList, Context context) {
+        this.scheduleArrayList = scheduleArrayList;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public doctorsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.card_doctor, parent, false));
+    public scheduleAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.card_clinic, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull doctorsAdapter.ViewHolder holder, int position) {
-        doctorsModel model = doctorsArrayList.get(position);
+    public void onBindViewHolder(@NonNull scheduleAdapter.ViewHolder holder, int position) {
+        clinicsModel model = scheduleArrayList.get(position);
 
-        holder.doctorName.setText(model.getDoctorName());
-        Picasso.get().load(model.getDoctorImage()).into(holder.doctorImage);
-        holder.doctorImage.setOnClickListener(new View.OnClickListener() {
+        holder.clinicName.setText(model.getClinicName());
+        Picasso.get().load(model.getClinicImage()).into(holder.clinicImage);
+        holder.clinicImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragment = new dr_detail();
+                Fragment fragment = new schedule1_D();
                 Bundle bundle = new Bundle();
                 FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                bundle.putString("did", String.valueOf(position));
                 bundle.putString("cid", String.valueOf(position));
                 fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.frameContainer2, fragment);
@@ -62,22 +61,24 @@ public class doctorsAdapter extends RecyclerView.Adapter<doctorsAdapter.ViewHold
             }
         });
 
-    }
+
+
+}
 
     @Override
     public int getItemCount() {
-        return doctorsArrayList.size();
+        return scheduleArrayList.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView doctorName;
-        ImageView doctorImage;
+        TextView clinicName;
+        ImageView clinicImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            doctorName = itemView.findViewById(R.id.doctor_name);
-            doctorImage = itemView.findViewById(R.id.doctor_image);
+            clinicName = itemView.findViewById(R.id.clinic_name);
+            clinicImage = itemView.findViewById(R.id.clinic_image);
 
         }
     }
