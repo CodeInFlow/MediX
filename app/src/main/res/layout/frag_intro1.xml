@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".intro1">
+
+    <TextView
+        android:id="@+id/txtwelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="40sp"
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/txtMediX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to MediX !"
+        android:layout_below="@+id/txtwelcome"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="60dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_intro1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose the doctor that you want with our very own booking app"
+        android:layout_below="@id/txtMediX"
+        android:layout_marginLeft="40dp"
+        android:textSize="16dp"
+        android:layout_marginRight="130dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/img_intro1_bg1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/intro1_bg1"
+        android:layout_toRightOf="@+id/txtMediX"
+        android:layout_marginLeft="50sp"
+        android:layout_below="@+id/txt_intro1"/>
+
+    <Button
+        android:id="@+id/btn_getStart"
+        android:layout_width="160dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="60dp"
+        android:text="Get Start"
+        android:textColor="@color/white"
+        android:layout_below="@+id/img_intro1_bg1"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_et"
+        android:backgroundTint="@color/theme_color"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/intro1_bg"
+        android:layout_below="@id/btn_getStart"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"/>
+
+
+
+</RelativeLayout>
