@@ -47,14 +47,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_phone"/>
+                    android:src=""/>
             </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/drName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prof. Dr. Suresh H. Advani"
+                android:text=""
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_bold"
                 android:layout_marginTop="18dp"
@@ -210,9 +210,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtDR"
-            android:text="Dr. Suresh H. Advani is a medical, pediatric oncologist and heamato-oncologist with 43+ years of experience.
-He has been honored with highest civilian awards of India, namely Padma Bhushan Award in 2012 and Padma Shri by Government of India in 2002.
-He is also recipient of the Dhanvantari Award in 2002, Dr. B. C. Roy National Award by Medical Council of India in 2005, Rashtriyra Krantiveer Award, Ujjain in 2014 and awarded Lifetime Achievement in Oncology by Harvard Medical International in 2005."
+            android:text=""
             android:layout_marginTop="20dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
@@ -235,7 +233,7 @@ He is also recipient of the Dhanvantari Award in 2002, Dr. B. C. Roy National Aw
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_work_hr"
-            android:text="Mon - Sat (08:30 AM - 09:00 PM)"
+            android:text=""
             android:layout_marginTop="10dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
@@ -249,7 +247,7 @@ He is also recipient of the Dhanvantari Award in 2002, Dr. B. C. Roy National Aw
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/rounded_et"
             android:backgroundTint="@color/themeColor"
             android:padding="10dp"
