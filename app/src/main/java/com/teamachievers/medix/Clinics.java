@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,13 +47,14 @@ public class Clinics extends Fragment {
 
         clinicsArrayList = new ArrayList<>();
         clinicsRV.setHasFixedSize(true);
-        clinicsRV.setLayoutManager(new LinearLayoutManager(getContext()));
+        clinicsRV.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        //GridLayoutManager mLayoutManager = new GridLayoutManger(this, 2);
 
         clinicsRVAdapter = new clinicsAdapter(clinicsArrayList, getActivity());
 
         clinicsRV.setAdapter(clinicsRVAdapter);
 
-        db.collection("Clinics").get()
+        db.collection("CT1").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {

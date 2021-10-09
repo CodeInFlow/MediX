@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
 import com.teamachievers.medix.Model.clinicsModel;
 import com.teamachievers.medix.R;
 
@@ -35,6 +37,7 @@ public class clinicsAdapter extends RecyclerView.Adapter<clinicsAdapter.ViewHold
         clinicsModel model = clinicsArrayList.get(position);
 
         holder.clinicName.setText(model.getClinicName());
+        Picasso.get().load(model.getClinicImage()).into(holder.clinicImage);
 
     }
 
@@ -46,10 +49,12 @@ public class clinicsAdapter extends RecyclerView.Adapter<clinicsAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView clinicName;
+        ImageView clinicImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             clinicName = itemView.findViewById(R.id.clinic_name);
+            clinicImage = itemView.findViewById(R.id.clinic_image);
 
         }
     }
