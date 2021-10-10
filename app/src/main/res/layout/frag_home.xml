@@ -40,7 +40,7 @@
                 android:id="@+id/img_Appoint"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_cal"
+                android:src="@drawable/ic_calendar"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="30dp"/>
