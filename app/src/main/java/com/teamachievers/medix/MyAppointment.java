@@ -23,7 +23,8 @@ import com.squareup.picasso.Picasso;
 public class MyAppointment extends Fragment {
 
 
-    String cid,did;
+    String cid,did,a,b,c,d,e,f,g;
+    Long h,i,j,k;
     private FirebaseFirestore db;
 
     @Override
@@ -34,12 +35,6 @@ public class MyAppointment extends Fragment {
         cid=getArguments().getString("cid");
         did=getArguments().getString("did");
 
-        /*drName =v.findViewById(R.id.drName);
-        drProf=v.findViewById(R.id.txt_prf);
-        drDetail=v.findViewById(R.id.txt_dr_detail);
-        drTime=v.findViewById(R.id.txt_time);
-        nos_pt=v.findViewById(R.id.nos_Patients);
-        nos_Exp=v.findViewById(R.id.Exp);*/
 
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -47,6 +42,7 @@ public class MyAppointment extends Fragment {
 
         DocumentReference documentReference = db.collection("Appointments").document("/"+currentuser+"/Clinics/"+cid+"/Doctors/"+did);
         DocumentReference documentReference1 = db.collection("queue").document("/0/clinics/"+cid+"/doctors/"+did);
+        DocumentReference documentReference2 = db.collection("queue").document("/0/clinics/"+cid+"/doctors/"+did+".1");
 
         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -54,24 +50,53 @@ public class MyAppointment extends Fragment {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document != null) {
-                      /*  a =document.getString("img");
+                        a =document.getString("fullname");
                         b = document.getString("name");
-                        c = document.getString("prof");
+                        c = document.getString("phone");
                         d = document.getString("desc");
-                        e = document.getString("time");
-                        f = document.getString("nos_p");
-                        g = document.getString("exp");*/
+                        e = document.getString("age");
+                        f = document.getString("gender");
+                        g = document.getString("date");
+                        h = document.getLong("Total");
 
 
-                       /* drProf.setText(c);
-                        drDetail.setText(d);
-                        drName.setText(b);
-                        drTime.setText(e);
-                        nos_pt.setText(f);
-                        nos_Exp.setText(g);
 
-                        Picasso.get().load(a).into(img_dr);
-*/
+
+                    } else {
+                        Log.d("LOGGER", "Error");
+                    }
+                } else {
+                    Log.d("LOGGER", "get failed with ", task.getException());
+                }
+            }
+        });
+
+        documentReference1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null) {
+                        i =document.getLong("Total");
+
+                    } else {
+                        Log.d("LOGGER", "Error");
+                    }
+                } else {
+                    Log.d("LOGGER", "get failed with ", task.getException());
+                }
+            }
+        });
+
+        documentReference2.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null) {
+                        j =document.getLong("Current");
+
+                        k = h-j;
 
                     } else {
                         Log.d("LOGGER", "Error");
