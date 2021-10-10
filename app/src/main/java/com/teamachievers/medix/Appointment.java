@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -42,6 +44,7 @@ public class Appointment extends Fragment {
     EditText name,phone,age,desc;
     private FirebaseFirestore db;
     Map<String, Object> data = new HashMap<>();
+    Map<String, Object> data1 = new HashMap<>();
     String cid,did,drname,drimg;
 
     @Override
@@ -114,24 +117,63 @@ public class Appointment extends Fragment {
 
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        //DocumentReference dbCourses = db.collection("").document();
-        DocumentReference documentReference = db.collection("Appointments").document("/7999969395/Clinics/"+cid+"/Doctors/"+did);
 
-        documentReference.set(data)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
+        DocumentReference documentReference = db.collection("Appointments").document("/"+currentuser+"/Clinics/"+cid+"/Doctors/"+did);
+        DocumentReference documentReference1 = db.collection("queue").document("/0/clinics/"+cid+"/doctors/"+did);
 
-                        Toast.makeText(getActivity(), "Submitted", Toast.LENGTH_SHORT).show();
+        documentReference1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null) {
+                        Long total = document.getLong("Total");
+                        data.put("mynum", total);
+                        data1.put("Total",total+1);
 
+                        documentReference1.set(data1)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+
+                                        Toast.makeText(getActivity(), "Your Appointment Number is : "+total, Toast.LENGTH_SHORT).show();
+
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+
+                                    }
+                                });
+
+
+                        documentReference.set(data)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+
+                                        Toast.makeText(getActivity(), "Submitted", Toast.LENGTH_SHORT).show();
+
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+
+                                    }
+                                });
+
+
+                    } else {
+                        Log.d("LOGGER", "Error");
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
+                } else {
+                    Log.d("LOGGER", "get failed with ", task.getException());
+                }
+            }
+        });
 
-                    }
-                });
     }
 
 

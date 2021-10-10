@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -54,8 +55,9 @@ public class Schedule1_D extends Fragment {
         scheduleDRVAdapter = new scheduleDAdapter(scheduleDArrayList, getActivity());
 
         scheduleDRV.setAdapter(scheduleDRVAdapter);
+        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        db.collection("/Appointments/7999969395/Clinics/"+cid+"/Doctors").get()
+        db.collection("/Appointments/"+currentuser+"/Clinics/"+cid+"/Doctors").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
