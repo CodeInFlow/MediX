@@ -47,7 +47,12 @@ public class MyAppointment extends Fragment {
         myno = v.findViewById(R.id.t4);
         current = v.findViewById(R.id.t2);
 
+        getdata();
 
+        return v;
+    }
+
+    private void getdata(){
 
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -112,8 +117,5 @@ public class MyAppointment extends Fragment {
         });
 
 
-
-        return v;
     }
-
 }
