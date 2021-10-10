@@ -33,28 +33,54 @@
         android:layout_height="250dp"
         android:layout_margin="20dp"
         android:background="@color/themeColor"
+        app:cardBackgroundColor="@color/themeColor"
         app:cardCornerRadius="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="20dp"
-            android:text="@string/your_chance_is_after" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="20dp"
-            android:text="@string/ongoing_number" />
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/your_chance_is_after"
+                android:textColor="#ffffff" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="190dp"
-            android:layout_marginLeft="20dp"
-            android:text="@string/your_appointment_number" />
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="160dp"
+                android:text="@string/ongoing_number"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/t3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="50dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="19 Patients"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="190dp"
+                android:text="@string/your_appointment_number"
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
@@ -132,6 +158,27 @@
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/txt_nos"
                 android:layout_centerVertical="true"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
 </LinearLayout>
 
     </RelativeLayout>
@@ -147,13 +194,15 @@
         android:text="Appointment Details" />
 
     <TextView
+        android:id="@+id/dname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="25dp"
-        android:text="Doctor Name : XYZ" />
+        android:text="Doctor Name : " />
 
     <TextView
+        android:id="@+id/fullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
@@ -162,13 +211,15 @@
         android:text="Full Name : ABC" />
 
     <TextView
+        android:id="@+id/phoneno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
-        android:text="Phone Number : 9567895789" />
+        android:text="Phone Number : " />
 
     <TextView
+        android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
@@ -176,6 +227,7 @@
         android:text="Age : 26 - 30" />
 
     <TextView
+        android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -190,6 +242,7 @@
         android:text="Problem" />
 
     <TextView
+        android:id="@+id/problem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"

@@ -52,7 +52,7 @@ public class Schedule extends Fragment {
         scheduleRV.setAdapter(scheduleRVAdapter);
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        db.collection("/Appointments/"+currentuser+"/Clinics").get()
+        db.collection("/Appointments/0/Clinics").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {

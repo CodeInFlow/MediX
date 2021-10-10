@@ -57,7 +57,7 @@ public class Schedule1_D extends Fragment {
         scheduleDRV.setAdapter(scheduleDRVAdapter);
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        db.collection("/Appointments/"+currentuser+"/Clinics/"+cid+"/Doctors").get()
+        db.collection("/Appointments/5tarKbV9M8afjQ7iEaSrTfxqjgC2/Clinics/"+cid+"/Doctors/").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {

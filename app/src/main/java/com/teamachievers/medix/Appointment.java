@@ -118,7 +118,7 @@ public class Appointment extends Fragment {
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        DocumentReference documentReference = db.collection("Appointments").document("/"+currentuser+"/Clinics/"+cid+"/Doctors/"+did);
+        DocumentReference documentReference = db.collection("Appointments").document("0/Clinics/"+cid+"/Doctors/"+did);
         DocumentReference documentReference1 = db.collection("queue").document("/0/clinics/"+cid+"/doctors/"+did);
 
         documentReference1.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
