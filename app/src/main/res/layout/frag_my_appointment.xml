@@ -7,6 +7,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MyAppointment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="14">
+
+        <TextView
+            android:id="@+id/txt_Home_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/neuton_bold"
+            android:padding="10dp"
+            android:text="MediX"
+            android:textColor="@color/themeColor"
+            android:textSize="26sp" />
+
+
+    </RelativeLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -40,59 +61,139 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="70dp">
 
         <ImageView
+            android:id="@+id/img_door"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
             android:src="@drawable/ic_bi_door_open_fill" />
 
         <TextView
+            android:id="@+id/txt_nos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+10" />
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img_door"
+            android:text="10+"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@id/txt_nos"
+            android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/txt_nos"
+            android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/txt_nos"
+                android:layout_centerVertical="true"/>
+</LinearLayout>
+
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="19sp"
+        android:fontFamily="@font/neuton_bold"
+
         android:text="Appointment Details" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
         android:text="Doctor Name : XYZ" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+
         android:text="Full Name : ABC" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
         android:text="Phone Number : 9567895789" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
         android:text="Age : 26 - 30" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
         android:text="Gender : Male" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
         android:text="Problem" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
         android:text="" />
 
 
